@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#FFF5EE">
+  <title>《关于你慢慢走进我生活这件事》</title>
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+XiaoWei&display=swap"
+    rel="stylesheet">
+
+  <!-- 样式 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- 背景层 -->
+  <div class="bg-layer"></div>
+  <div class="bg-grain"></div>
+  <div class="bg-light"></div>
+
+  <!-- 音乐控制 -->
+  <button class="music-btn" id="musicBtn" aria-label="音乐控制">
+    ♪
+  </button>
+
+  <!-- 主容器 -->
+  <div class="container" id="app">
+
+    <!-- 场景 0：开场打字机（第一个打字机场景） -->
+    <div class="scene" id="scene-opening">
+      <div class="typewriter-text" id="typewriter"></div>
+    </div>
+
+    <!-- 场景 1：纸条 -->
+    <div class="scene" id="scene-note">
+      <div class="note-wrapper" id="noteWrapper">
+        <div class="note" id="note">
+          <div class="note-image" id="noteImage" style="display:none">
+            <img src="" alt="纸条照片">
+          </div>
+          <div class="note-text" id="noteText"></div>
+          <div class="note-sender" id="noteSender"></div>
+        </div>
+      </div>
+      <div class="note-hint" id="noteHint">轻触纸条展开</div>
+    </div>
+
+    <!-- 通用剧情场景容器 -->
+    <div class="scene" id="scene-story">
+      <div class="glass-card">
+        <div class="story-text" id="storyText"></div>
+      </div>
+      <button class="btn btn-heart" id="nextBtn">继续偷看</button>
+    </div>
+
+    <!-- 选择分支场景 -->
+    <div class="scene" id="scene-choice">
+      <div class="glass-card">
+        <div class="story-text" id="choiceQuestion"></div>
+      </div>
+      <div class="choice-group" id="choiceGroup"></div>
+    </div>
+
+    <!-- 照片浮现场景 -->
+    <div class="scene" id="scene-photo">
+      <div class="photo-reveal">
+        <div class="photo-frame" id="photoFrame">
+          <div class="photo-placeholder">
+            <span>📷</span>
+            <span>请替换为你的照片</span>
+          </div>
+        </div>
+        <div class="photo-caption" id="photoCaption"></div>
+      </div>
+      <button class="btn btn-heart" id="photoNextBtn">继续偷看</button>
+    </div>
+
+    <!-- 高潮场景 -->
+    <div class="scene" id="scene-climax">
+      <div class="climax-text" id="climaxText"></div>
+      <button class="btn btn-heart" id="climaxNextBtn">继续偷看</button>
+    </div>
+
+    <!-- 结尾场景 -->
+    <div class="scene" id="scene-ending">
+      <div class="ending-text" id="endingText"></div>
+      <div class="ending-subtitle" id="endingSubtitle"></div>
+      <div class="ending-note">❤️ 未完待续 ❤️</div>
+    </div>
+
+  </div>
+
+  <!-- 噜噜 -->
+  <div class="lulu-container" id="luluContainer">
+    <div class="lulu" id="lulu">
+      <div class="lulu-body">
+        <div class="lulu-mouth"></div>
+        <div class="lulu-blush left"></div>
+        <div class="lulu-blush right"></div>
+      </div>
+      <div class="lulu-bubble" id="luluBubble"></div>
+    </div>
+  </div>
+
+  <!-- 爱心掉落容器 -->
+  <div class="hearts-container" id="heartsContainer"></div>
+
+  <!-- 点击波纹容器 -->
+  <div class="ripple-container" id="rippleContainer"></div>
+
+  <!-- 隐藏台词弹窗 -->
+  <div class="hidden-toast" id="hiddenToast"></div>
+
+  <!-- 配置 -->
+  <script src="config/story.js"></script>
+
+  <!-- 主逻辑 -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>

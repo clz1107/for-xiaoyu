@@ -1,0 +1,8 @@
+请将照片放在此目录下，支持 jpg/png/webp 格式。
+
+照片文件命名建议：
+  photo-1.jpg   — 图书馆窗边
+  photo-2.jpg   — 偷拍看书
+  photo-3.jpg   — 一起看夕阳
+
+然后在 config/story.js 的 photos 数组中配置对应的路径和说明文字。

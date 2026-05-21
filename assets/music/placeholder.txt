@@ -1,0 +1,9 @@
+请将音乐文件放在此目录下，支持 mp3/ogg/wav 格式。
+
+推荐：
+  温柔的钢琴曲或 lofi 风格音乐
+
+文件命名建议：
+  love-theme.mp3
+
+然后在 config/story.js 的 music 中配置对应的路径和名称。
