@@ -297,6 +297,9 @@ body {
 
 .note.mode-photo {
   padding: 0;
+  min-height: 0;
+  width: auto;
+  max-width: 260px;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -310,6 +313,9 @@ body {
 .note.mode-photo.unfolded {
   background: transparent;
   border: none;
+  min-height: 0;
+  width: auto;
+  max-width: 260px;
   box-shadow:
     0 4px 16px rgba(74, 55, 40, 0.08),
     0 16px 48px rgba(74, 55, 40, 0.12);
@@ -622,8 +628,8 @@ body {
 }
 
 .lulu {
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 70px;
   cursor: pointer;
   pointer-events: auto;
   opacity: 0;
@@ -638,14 +644,14 @@ body {
 }
 
 .lulu-body {
-  width: 52px;
-  height: 52px;
-  background: radial-gradient(circle at 35% 35%, #FDE68A, var(--lulu-color));
-  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  background: radial-gradient(circle at 30% 30%, #FFE082, #F5D742, #E6C830);
+  border-radius: 55% 55% 50% 50%;
   position: relative;
   box-shadow:
-    0 4px 12px var(--lulu-shadow),
-    inset 0 -3px 6px rgba(0, 0, 0, 0.05);
+    0 4px 16px rgba(245, 215, 66, 0.5),
+    inset 0 -4px 8px rgba(139, 115, 85, 0.1);
   animation: luluBreathe 3s ease-in-out infinite;
 }
 
@@ -657,47 +663,106 @@ body {
   }
 
   50% {
-    transform: scale(1.05);
+    transform: scale(1.06);
   }
 }
 
-.lulu-body::before,
-.lulu-body::after {
-  content: '';
+/* 头顶小揪揪 */
+.lulu-tuft {
   position: absolute;
-  width: 8px;
-  height: 10px;
-  background: #5B4636;
-  border-radius: 50%;
-  top: 16px;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 12px;
+  background: radial-gradient(circle at 50% 30%, #FFB74D, #FFA726);
+  border-radius: 50% 50% 45% 45%;
+  box-shadow: 0 -2px 4px rgba(255, 150, 70, 0.3);
 }
 
-.lulu-body::before {
+/* 耳朵 */
+.lulu-ear {
+  position: absolute;
+  width: 12px;
+  height: 16px;
+  background: linear-gradient(180deg, #FFE082 0%, #F5D742 100%);
+  border-radius: 50% 50% 40% 40%;
+  top: 4px;
+}
+
+.lulu-ear.left {
+  left: -2px;
+  transform: rotate(-15deg);
+}
+
+.lulu-ear.right {
+  right: -2px;
+  transform: rotate(15deg);
+}
+
+/* 眼睛 */
+.lulu-eye {
+  position: absolute;
+  width: 10px;
+  height: 6px;
+  background: #3E2723;
+  border-radius: 50%;
+  top: 18px;
+}
+
+.lulu-eye.left {
   left: 12px;
 }
 
-.lulu-body::after {
+.lulu-eye.right {
   right: 12px;
 }
 
+/* 眼睛高光 */
+.lulu-eye::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  top: 1px;
+  left: 2px;
+}
+
+/* 嘴巴 */
 .lulu-mouth {
   position: absolute;
-  width: 12px;
-  height: 6px;
-  border-bottom: 2px solid #5B4636;
+  width: 18px;
+  height: 10px;
+  background: #E65100;
   border-radius: 0 0 50% 50%;
-  bottom: 14px;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+/* 舌头 */
+.lulu-tongue {
+  position: absolute;
+  width: 10px;
+  height: 6px;
+  background: #FFAB91;
+  border-radius: 0 0 50% 50%;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
+/* 红晕 */
 .lulu-blush {
   position: absolute;
-  width: 12px;
-  height: 8px;
-  background: rgba(255, 150, 150, 0.35);
+  width: 14px;
+  height: 10px;
+  background: rgba(255, 150, 150, 0.4);
   border-radius: 50%;
-  bottom: 10px;
+  bottom: 8px;
 }
 
 .lulu-blush.left {
@@ -710,7 +775,7 @@ body {
 
 .lulu-bubble {
   position: absolute;
-  bottom: 60px;
+  bottom: 72px;
   left: 0;
   background: white;
   border-radius: 12px 12px 12px 4px;
@@ -718,8 +783,9 @@ body {
   font-size: 0.78rem;
   color: var(--text-primary);
   box-shadow: 0 4px 16px rgba(74, 55, 40, 0.1);
-  white-space: nowrap;
-  max-width: 200px;
+  width: max-content;
+  max-width: 210px;
+  word-break: break-word;
   opacity: 0;
   transform: translateY(8px);
   transition: all var(--transition-medium);
@@ -939,6 +1005,7 @@ body {
     font-size: 0.75rem;
     padding: 10px 14px;
     max-width: 160px;
+    word-break: break-word;
   }
 
   .btn {
