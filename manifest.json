@@ -1,0 +1,21 @@
+{
+  "name": "关于你慢慢走进我生活这件事",
+  "short_name": "小鱼",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff7f5",
+  "theme_color": "#fff7f5",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
